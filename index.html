@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Marketing Hub | Digital Marketing Agency</title>
+    <meta name="description" content="Transform your online presence with NextGen Marketing Hub. Websites, SEO, Google Business, Social Media, and Paid Ads management for local businesses.">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https:;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="NextGen Marketing Hub">
+    <meta property="og:description" content="Full-service digital marketing agency. We build stunning websites and grow your business online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nextgenmarketinghub.top">
+    <meta property="og:image" content="https://nextgenmarketinghub.top/og-image.jpg">
+    <meta property="og:image:alt" content="NextGen Marketing Hub - Digital Marketing Agency">
+    <meta property="og:site_name" content="NextGen Marketing Hub">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NextGen Marketing Hub">
+    <meta name="twitter:description" content="Full-service digital marketing agency. We build stunning websites and grow your business online.">
+    <meta name="twitter:image" content="https://nextgenmarketinghub.top/og-image.jpg">
+    
+    <!-- Structured Data - Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "NextGen Marketing Hub",
+      "description": "Full-service digital marketing agency helping local businesses grow online with websites, SEO, Google Business management, social media, and paid ads.",
+      "url": "https://nextgenmarketinghub.top",
+      "logo": "https://nextgenmarketinghub.top/logo.png",
+      "telephone": "+15551234567",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "",
+        "addressRegion": "",
+        "postalCode": "",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.google.com/maps",
+        "https://www.facebook.com",
+        "https://www.linkedin.com",
+        "https://www.instagram.com"
+      ],
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- SEO -->
+    <meta name="author" content="NextGen Marketing Hub">
+    <meta name="copyright" content="NextGen Marketing Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nextgenmarketinghub.top/">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        secondary: '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-900 text-white" x-data="{ mobileMenu: false, annual: true }" lang="en">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-xl font-bold">
+                        <span class="text-white">NextGen</span><span class="text-emerald-400">Marketing</span><span class="text-white">Hub</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-gray-300 hover:text-white transition" aria-current="false">Services</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition" aria-current="false">Pricing</a>
+                    <a href="#results" class="text-gray-300 hover:text-white transition" aria-current="false">Results</a>
+                    <a href="#about" class="text-gray-300 hover:text-white transition" aria-current="false">About</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-lg transition">
+                        Get Free Audit
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenu" x-transition class="md:hidden py-4 border-t border-gray-800">
+                <a href="#services" class="block py-2 text-gray-300">Services</a>
+                <a href="#pricing" class="block py-2 text-gray-300">Pricing</a>
+                <a href="#results" class="block py-2 text-gray-300">Results</a>
+                <a href="#about" class="block py-2 text-gray-300">About</a>
+                <a href="#contact" class="block mt-4 bg-emerald-500 text-white text-center px-6 py-2 rounded-lg">
+                    Get Free Audit
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-block bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                🚀 Now accepting new clients for March 2026
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                We Build Websites That<br>
+                <span class="gradient-text">Actually Make You Money</span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-400 max-w-3xl mx-auto">
+                Stop losing customers to competitors. We build stunning websites, manage your Google presence, and run ads that bring in leads — all for one simple monthly price.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 text-white text-lg px-8 py-4 rounded-lg transition">
+                    Get Your Free Website Audit
+                </a>
+                <a href="#pricing" class="border border-gray-600 hover:border-gray-500 text-white text-lg px-8 py-4 rounded-lg transition">
+                    See Pricing
+                </a>
+            </div>
+            <p class="mt-6 text-gray-500 text-sm">No contracts • Cancel anytime • Results in 30 days</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="py-8 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-gray-400">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">150+</div>
+                    <div class="text-sm">Websites Built</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">$2.4M+</div>
+                    <div class="text-sm">Revenue Generated</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">98%</div>
+                    <div class="text-sm">Client Retention</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">4.9★</div>
+                    <div class="text-sm">Google Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Sound Familiar?</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-10">
+                <div class="bg-gray-800/50 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">😤</div>
+                    <h3 class="font-semibold mb-2">Your website looks outdated</h3>
+                    <p class="text-gray-400 text-sm">Built 5 years ago, doesn't work on mobile, zero leads coming in</p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="font-semibold mb-2">Can't find yourself on Google</h3>
+                    <p class="text-gray-400 text-sm">Competitors show up first when customers search for your services</p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">💸</div>
+                    <h3 class="font-semibold mb-2">Wasted money on marketing</h3>
+                    <p class="text-gray-400 text-sm">Tried agencies before, got burned, no idea what you're paying for</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Everything You Need to Grow Online</h2>
+                <p class="mt-4 text-xl text-gray-400">One agency. One monthly bill. Total accountability.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Website Design -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">🌐</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Website Design</h3>
+                    <p class="text-gray-400 mb-4">Stunning, fast websites that convert visitors into customers. Mobile-first, SEO-ready.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Custom design</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Mobile responsive</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Lightning fast</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Contact forms</li>
+                    </ul>
+                </div>
+
+                <!-- Google Business -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">📍</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Google Business Profile</h3>
+                    <p class="text-gray-400 mb-4">Dominate local search. Show up when customers search near you.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Profile optimization</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Weekly posts</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Review management</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Photo uploads</li>
+                    </ul>
+                </div>
+
+                <!-- SEO -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">🔍</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">SEO Services</h3>
+                    <p class="text-gray-400 mb-4">Rank higher on Google. Get found by customers actively searching for you.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Keyword research</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> On-page optimization</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Local SEO</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Monthly reporting</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Social Media</h3>
+                    <p class="text-gray-400 mb-4">Build your brand presence. Engage customers where they spend time.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Content creation</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Daily posting</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Community management</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Analytics reporting</li>
+                    </ul>
+                </div>
+
+                <!-- Paid Ads -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">📢</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Paid Advertising</h3>
+                    <p class="text-gray-400 mb-4">Instant leads with Facebook, Instagram, and Google Ads. Every dollar tracked.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Campaign setup</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> A/B testing</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Weekly optimization</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> ROI tracking</li>
+                    </ul>
+                </div>
+
+                <!-- Client Dashboard -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Live Dashboard</h3>
+                    <p class="text-gray-400 mb-4">See your results 24/7. No more wondering if marketing is working.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Real-time leads</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> ROI calculator</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Ranking tracker</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Call tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Simple, Transparent Pricing</h2>
+                <p class="mt-4 text-xl text-gray-400">No hidden fees. No long contracts. Cancel anytime.</p>
+                
+                <!-- Monthly/Annual Toggle -->
+                <div class="mt-8 flex items-center justify-center gap-4">
+                    <span :class="!annual ? 'text-white' : 'text-gray-400'">Monthly</span>
+                    <button @click="annual = !annual" class="relative w-14 h-7 bg-gray-700 rounded-full transition">
+                        <div :class="annual ? 'translate-x-7' : 'translate-x-1'" class="absolute top-1 w-5 h-5 bg-emerald-500 rounded-full transition"></div>
+                    </button>
+                    <span :class="annual ? 'text-white' : 'text-gray-400'">Annual <span class="text-emerald-400 text-sm">(Save 20%)</span></span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Starter -->
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-bold">Starter</h3>
+                    <p class="text-gray-400 text-sm mt-1">Just getting started</p>
+                    <div class="mt-4">
+                        <span class="text-4xl font-bold">$49</span>
+                        <span class="text-gray-400">/mo</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">12-month commitment</p>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 3-page website</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Mobile responsive</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Hosting & SSL</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Contact form</li>
+                        <li class="flex items-center gap-2 text-gray-500">✗ SEO</li>
+                        <li class="flex items-center gap-2 text-gray-500">✗ GBP management</li>
+                    </ul>
+                    <a href="#contact" class="mt-6 block text-center bg-gray-800 hover:bg-gray-700 py-3 rounded-lg transition">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Growth -->
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-bold">Growth</h3>
+                    <p class="text-gray-400 text-sm mt-1">Most popular</p>
+                    <div class="mt-4">
+                        <span class="text-4xl font-bold">$99</span>
+                        <span class="text-gray-400">/mo</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">12-month commitment</p>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 10-page website</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Mobile responsive</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Hosting & SSL</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Contact forms</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Basic SEO</li>
+                        <li class="flex items-center gap-2 text-gray-500">✗ GBP management</li>
+                    </ul>
+                    <a href="#contact" class="mt-6 block text-center bg-gray-800 hover:bg-gray-700 py-3 rounded-lg transition">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Pro - Featured -->
+                <div class="bg-gradient-to-b from-emerald-500/20 to-gray-900 p-6 rounded-xl border-2 border-emerald-500 relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        MOST POPULAR
+                    </div>
+                    <h3 class="text-lg font-bold">Pro</h3>
+                    <p class="text-gray-400 text-sm mt-1">Best value</p>
+                    <div class="mt-4">
+                        <span class="text-4xl font-bold">$299</span>
+                        <span class="text-gray-400">/mo</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">No commitment</p>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 20-page website</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Mobile responsive</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Hosting & SSL</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Unlimited forms</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Full SEO</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> GBP management</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Live dashboard</li>
+                    </ul>
+                    <a href="#contact" class="mt-6 block text-center bg-emerald-500 hover:bg-emerald-600 py-3 rounded-lg transition">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+                    <h3 class="text-lg font-bold">Enterprise</h3>
+                    <p class="text-gray-400 text-sm mt-1">Full service</p>
+                    <div class="mt-4">
+                        <span class="text-4xl font-bold">$599</span>
+                        <span class="text-gray-400">/mo</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">No commitment</p>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Everything in Pro</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Social media (3 platforms)</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Google Ads management</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Facebook/IG Ads</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Priority support</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Weekly strategy calls</li>
+                    </ul>
+                    <a href="#contact" class="mt-6 block text-center bg-gray-800 hover:bg-gray-700 py-3 rounded-lg transition">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20 px-4 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Real Results for Real Businesses</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-gray-900 p-6 rounded-xl">
+                    <div class="text-emerald-400 text-sm font-medium mb-2">Plumbing Company</div>
+                    <h3 class="text-xl font-bold mb-4">+347% Leads in 90 Days</h3>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <div class="flex justify-between"><span>Before:</span><span>8 leads/month</span></div>
+                        <div class="flex justify-between"><span>After:</span><span>36 leads/month</span></div>
+                        <div class="flex justify-between"><span>Revenue increase:</span><span class="text-emerald-400">+$42,000/mo</span></div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bg-gray-900 p-6 rounded-xl">
+                    <div class="text-emerald-400 text-sm font-medium mb-2">Dental Practice</div>
+                    <h3 class="text-xl font-bold mb-4">#1 Google Ranking</h3>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <div class="flex justify-between"><span>Before:</span><span>Page 3</span></div>
+                        <div class="flex justify-between"><span>After:</span><span>#1 for "dentist near me"</span></div>
+                        <div class="flex justify-between"><span>New patients/month:</span><span class="text-emerald-400">+28</span></div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="bg-gray-900 p-6 rounded-xl">
+                    <div class="text-emerald-400 text-sm font-medium mb-2">Restaurant</div>
+                    <h3 class="text-xl font-bold mb-4">4.2x ROI on Ads</h3>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <div class="flex justify-between"><span>Ad spend:</span><span>$2,000/mo</span></div>
+                        <div class="flex justify-between"><span>Revenue:</span><span>$8,400/mo</span></div>
+                        <div class="flex justify-between"><span>Cost per lead:</span><span class="text-emerald-400">$18.50</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Get Your Free Website Audit</h2>
+                <p class="mt-4 text-xl text-gray-400">We'll show you exactly what's wrong with your current online presence — no obligation.</p>
+            </div>
+            
+            <form action="https://webhook.nextgenmarketinghub.top/webhook/nextgen" method="POST" class="bg-gray-900 p-8 rounded-xl border border-gray-800" x-data="{ submitted: false, submitting: false }" @submit.prevent="submitting = true; fetch('https://webhook.nextgenmarketinghub.top/webhook/nextgen', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ name: $refs.name.value, email: $refs.email.value, phone: $refs.phone.value, business_type: $refs.businessType.value, current_website: $refs.website.value, goals: $refs.goals.value, form_type: 'free-audit', source: 'nextgen-marketing' }) }).then(r => r.json()).then(d => { submitted = true; submitting = false; }).catch(e => { submitting = false; alert('Error submitting. Please try again.'); })">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                        <input type="text" id="name" name="name" x-ref="name" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" id="email" name="email" x-ref="email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium mb-2">Phone</label>
+                        <input type="tel" id="phone" name="phone" x-ref="phone" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="(555) 123-4567">
+                    </div>
+                    <div>
+                        <label for="business-type" class="block text-sm font-medium mb-2">Business Type</label>
+                        <select id="business-type" name="businessType" x-ref="businessType" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            <option value="">Select business type...</option>
+                            <option value="home-services">Home Services</option>
+                            <option value="medical-dental">Medical/Dental</option>
+                            <option value="restaurant">Restaurant</option>
+                            <option value="professional-services">Professional Services</option>
+                            <option value="retail">Retail</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="website" class="block text-sm font-medium mb-2">Current Website (if any)</label>
+                        <input type="url" id="website" name="website" x-ref="website" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="https://yourwebsite.com">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="goals" class="block text-sm font-medium mb-2">What are your goals?</label>
+                        <textarea id="goals" name="goals" rows="3" x-ref="goals" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Tell us what you want to achieve..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="mt-6 w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 rounded-lg font-medium transition focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900" x-show="!submitted" x-transition :disabled="submitting">
+                    <span x-show="!submitting">Get My Free Audit</span>
+                    <span x-show="submitting">Submitting...</span>
+                </button>
+                <p x-show="submitted" x-transition class="mt-6 p-4 bg-emerald-500/10 border border-emerald-500 rounded-lg text-emerald-400 text-center">
+                    Thank you! We'll respond within 24 hours.
+                </p>
+                <template x-if="!submitted">
+                    <p class="mt-4 text-center text-gray-500 text-sm">We'll respond within 24 hours. No spam, ever.</p>
+                </template>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">About Us</h2>
+                <p class="mt-4 text-xl text-gray-400">We're passionate about helping local businesses succeed online.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                    <p class="text-gray-400 mb-6">
+                        At NextGen Marketing Hub, we believe every local business deserves a powerful online presence. We combine cutting-edge web design, data-driven marketing strategies, and personalized service to help you grow.
+                    </p>
+                    <h3 class="text-2xl font-bold mb-4">Why Choose Us?</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center gap-3"><span class="text-emerald-400">✓</span> Transparent pricing with no hidden fees</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-400">✓</span> Results-focused strategies</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-400">✓</span> Dedicated account manager</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-400">✓</span> 24/7 customer support</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-400">✓</span> Proven track record</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800">
+                    <h3 class="text-xl font-bold mb-4">Get in Touch</h3>
+                    <p class="text-gray-400 mb-6">Ready to grow your business? Contact us today for a free consultation.</p>
+                    <a href="#contact" class="block text-center bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-lg transition">
+                        Contact Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="text-white">NextGen</span><span class="text-emerald-400">Marketing</span><span class="text-white">Hub</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm">Full-service digital marketing agency helping local businesses grow online.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#services" class="hover:text-white">Website Design</a></li>
+                        <li><a href="#services" class="hover:text-white">SEO Services</a></li>
+                        <li><a href="#services" class="hover:text-white">Google Business</a></li>
+                        <li><a href="#services" class="hover:text-white">Social Media</a></li>
+                        <li><a href="#services" class="hover:text-white">Paid Ads</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="/about" class="hover:text-white">About Us</a></li>
+                        <li><a href="/case-studies" class="hover:text-white">Case Studies</a></li>
+                        <li><a href="/blog" class="hover:text-white">Blog</a></li>
+                        <li><a href="/careers" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>📧 hello@nextgenmarketinghub.top</li>
+                        <li>📞 (555) 123-4567</li>
+                        <li>📍 United States</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 NextGen Marketing Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

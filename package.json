@@ -1,0 +1,13 @@
+{
+  "name": "nextgen-marketing-hub",
+  "version": "1.0.0",
+  "description": "NextGen Marketing Hub - Agency Website",
+  "scripts": {
+    "dev": "npx serve . -p 3001",
+    "build": "echo 'Static site - no build needed'",
+    "start": "npx serve . -p 3001"
+  },
+  "keywords": ["marketing", "agency", "website"],
+  "author": "NextGen Marketing Hub",
+  "license": "UNLICENSED"
+}

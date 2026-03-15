@@ -1,0 +1,21 @@
+# robots.txt for NextGen Marketing Hub
+# https://nextgenmarketinghub.top
+
+User-agent: *
+Allow: /
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /.git/
+
+# Allow important files
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Crawl delay for politeness
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://nextgenmarketinghub.top/sitemap.xml

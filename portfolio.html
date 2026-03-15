@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | NextGen Marketing Hub - Our Work & Case Studies</title>
+    <meta name="description" content="Browse our portfolio of award-winning websites and digital marketing campaigns. See case studies, results, and technologies we use for businesses.">
+    
+    <!-- SEO -->
+    <meta name="author" content="NextGen Marketing Hub">
+    <meta name="copyright" content="NextGen Marketing Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nextgenmarketinghub.com/portfolio">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        gradient: {
+                            hero: ['linear-gradient(135deg, #667eea 0%, #764ba2 100%)'],
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background-color: #10B981;
+            color: white;
+        }
+        .project-card {
+            transition: all 0.4s ease;
+        }
+        .project-card.hidden {
+            display: none;
+        }
+        .project-card.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-900 text-white" x-data="{ 
+    mobileMenu: false, 
+    activeFilter: 'all',
+    filters: [
+        { id: 'all', label: 'All Projects' },
+        { id: 'e-commerce', label: 'E-Commerce' },
+        { id: 'landing-pages', label: 'Landing Pages' },
+        { id: 'full-sites', label: 'Full Websites' },
+        { id: 'campaigns', label: 'Campaigns' }
+    ],
+    projects: [
+        {
+            id: 1,
+            title: "LuxeBoutique",
+            category: "e-commerce",
+            image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?w=800&h=600&fit=crop",
+            description: "Complete e-commerce redesign for luxury fashion retailer",
+            techStack: ["React", "Node.js", "Stripe", "MongoDB"],
+            results: "+245% sales in 6 months",
+            liveUrl: "https://example.com",
+            tags: ["E-Commerce", "Fashion", "Mobile-First"]
+        },
+        {
+            id: 2,
+            title: "HealthTech App Landing",
+            category: "landing-pages",
+            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+            description: "High-converting landing page for healthcare startup",
+            techStack: ["HTML5", "CSS3", "JavaScript", "Analytics"],
+            results: "68% conversion rate",
+            liveUrl: "https://example.com",
+            tags: ["Healthcare", "Landing Page", "Conversion Optimization"]
+        },
+        {
+            id: 3,
+            title: "Restaurant Chain Website",
+            category: "full-sites",
+            image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop",
+            description: "Multi-location restaurant website with online ordering",
+            techStack: ["WordPress", "WooCommerce", "Custom Theme", "SEO"],
+            results: "+180% online orders",
+            liveUrl: "https://example.com",
+            tags: ["Restaurant", "E-Commerce", "Local SEO"]
+        },
+        {
+            id: 4,
+            title: "SaaS Product Launch",
+            category: "campaigns",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+            description: "Integrated digital campaign for SaaS product launch",
+            techStack: ["Google Ads", "LinkedIn", "Email Marketing", "Content"],
+            results: "312 qualified leads in 30 days",
+            liveUrl: "https://example.com",
+            tags: ["SaaS", "B2B", "Lead Generation"]
+        },
+        {
+            id: 5,
+            title: "Real Estate Platform",
+            category: "e-commerce",
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+            description: "Custom real estate listing platform with advanced search",
+            techStack: ["React", "GraphQL", "PostgreSQL", "Maps API"],
+            results: "5,000+ monthly users",
+            liveUrl: "https://example.com",
+            tags: ["Real Estate", "Platform", "Search"]
+        },
+        {
+            id: 6,
+            title: "Fitness Studio Membership",
+            category: "landing-pages",
+            image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop",
+            description: "High-converting landing page for fitness studio",
+            techStack: ["HubSpot", "Landing Page", "CRM Integration"],
+            results: "42% membership signup increase",
+            liveUrl: "https://example.com",
+            tags: ["Fitness", "Membership", "Conversion"]
+        },
+        {
+            id: 7,
+            title: "Manufacturing Company Website",
+            category: "full-sites",
+            image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=800&h=600&fit=crop",
+            description: "Corporate website redesign for manufacturing firm",
+            techStack: ["Webflow", "Custom CMS", "3D Animations"],
+            results: "Top 3 Google rankings for key terms",
+            liveUrl: "https://example.com",
+            tags: ["B2B", "Manufacturing", "Corporate"]
+        },
+        {
+            id: 8,
+            title: "E-learning Platform Campaign",
+            category: "campaigns",
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+            description: "Multi-channel campaign for online course platform",
+            techStack: ["Facebook Ads", "Google Ads", "Content Marketing"],
+            results: "2,500+ course enrollments",
+            liveUrl: "https://example.com",
+            tags: ["Education", "E-Learning", "Multi-Channel"]
+        }
+    ]
+}">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black/80 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold">
+                        <span class="text-white">NextGen</span>
+                        <span class="text-emerald-400">Marketing</span>
+                        <span class="text-white">Hub</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition">Home</a>
+                    <a href="services.html" class="text-gray-300 hover:text-white transition">Services</a>
+                    <a href="portfolio.html" class="text-white hover:text-emerald-400 transition font-semibold">Portfolio</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="contact.html" class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-lg transition">
+                        Get Free Consultation
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenu" x-transition class="md:hidden py-4 border-t border-gray-800">
+                <a href="index.html" class="block py-2 text-gray-300 hover:text-white">Home</a>
+                <a href="services.html" class="block py-2 text-gray-300 hover:text-white">Services</a>
+                <a href="portfolio.html" class="block py-2 text-gray-300 hover:text-white">Portfolio</a>
+                <a href="about.html" class="block py-2 text-gray-300 hover:text-white">About</a>
+                <a href="contact.html" class="block py-2 text-gray-300 hover:text-white">Contact</a>
+                <a href="contact.html" class="mt-4 block bg-emerald-500 text-white text-center px-6 py-2 rounded-lg hover:bg-emerald-600 transition">
+                    Get Consultation
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-block bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                Award-Winning Work
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 animate-fade-in">
+                Our Portfolio
+            </h1>
+            <p class="mt-6 text-xl text-gray-400 mb-10 animate-fade-in" style="animation-delay: 0.2s;">
+                Real results. Real businesses. See how we've helped companies achieve measurable growth.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="py-8 border-b border-gray-800 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-3" x-data="{ activeFilter: 'all' }">
+                <template x-for="filter in filters" :key="filter.id">
+                    <button 
+                        @click="activeFilter = filter.id"
+                        class="filter-btn px-6 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition"
+                        :class="activeFilter === filter.id ? 'active' : ''"
+                        x-text="filter.label">
+                    </button>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-20 px-4 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <template x-for="project in projects" :key="project.id">
+                    <div 
+                        class="project-card bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-emerald-500/50 card-lift"
+                        :class="activeFilter === 'all' || project.category === activeFilter ? 'visible' : 'hidden'"
+                        x-show="activeFilter === 'all' || project.category === activeFilter"
+                        x-transition.scale
+                        x-data="{ visible: activeFilter === 'all' || project.category === activeFilter }"
+                        >
+                        <div class="relative overflow-hidden" style="padding-bottom: 56.25%;">
+                            <img :src="project.image" :alt="project.title" class="absolute inset-0 w-full h-full object-cover transition duration-500 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs rounded-full" x-text="project.category.replace('-', ' ').toUpperCase()"></span>
+                                <template x-for="tag in project.tags.slice(0, 2)">
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-full" x-text="tag"></span>
+                                </template>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2" x-text="project.title"></h3>
+                            <p class="text-gray-400 mb-4" x-text="project.description"></p>
+                            <div class="mb-4">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <template x-for="tech in project.techStack">
+                                        <span class="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded" x-text="tech"></span>
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+                                <div>
+                                    <div class="text-xs text-gray-500 mb-1">Key Result</div>
+                                    <div class="text-emerald-400 font-semibold" x-text="project.results"></div>
+                                </div>
+                                <a :href="project.liveUrl" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition">
+                                    <span class="mr-1">View Live</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 bg-gradient-to-r from-emerald-500 to-emerald-600">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Build Your Success Story?</h2>
+            <p class="text-xl text-gray-100 mb-12">
+                Let's create something amazing together. Get a free consultation and see how we can transform your online presence.
+            </p>
+            <div>
+                <a href="contact.html" class="bg-white hover:bg-gray-100 text-gray-900 text-lg px-8 py-4 rounded-lg transition transform hover:scale-105">
+                    Start Your Project Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="text-white">NextGen</span>
+                        <span class="text-emerald-400">Marketing</span>
+                        <span class="text-white">Hub</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm">Award-winning digital marketing agency helping businesses grow online.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="services.html" class="hover:text-white">Website Design</a></li>
+                        <li><a href="services.html" class="hover:text-white">SEO Services</a></li>
+                        <li><a href="services.html" class="hover:text-white">Paid Advertising</a></li>
+                        <li><a href="services.html" class="hover:text-white">Social Media</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>📧 hello@nextgenmarketinghub.com</li>
+                        <li>📞 (555) 123-4567</li>
+                        <li>📍 United States</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 NextGen Marketing Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filter = btn.getAttribute('@click').split('=')[1].replace(/'/g, '');
+                    console.log('Filtering by:', filter);
+                });
+            });
+            
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Staggered animation
+                        const cards = document.querySelectorAll('.project-card.visible');
+                        cards.forEach((card, i) => {
+                            card.style.animationDelay = `${i * 0.1}s`;
+                        });
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe each project card
+            document.querySelectorAll('.project-card').forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Filter functionality using Alpine
+            window.addEventListener('alpine:initialized', () => {
+                // Filter logic handled by Alpine
+            });
+        });
+    </script>
+</body>
+</html>
